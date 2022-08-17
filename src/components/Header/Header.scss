@@ -47,7 +47,6 @@
         min-width: 36px;
         height: 36px;
         border-radius: 50%;
-        // display: inline-block;
         margin: 1rem 0;
     }
 
@@ -65,7 +64,7 @@
         background-repeat: no-repeat;
         background-color: $primary-cta;
         padding: 1rem 2rem;
-        border: 1px $secondary-divider solid;
+        border: none;
         border-radius: 4px;
     }
 

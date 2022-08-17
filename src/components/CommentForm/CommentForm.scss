@@ -1,0 +1,73 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography';
+
+.comment-form {
+    display: flex;
+    margin: 1rem;
+    border-bottom: 1px solid $secondary-divider;
+    padding-bottom: 1rem;
+
+    &__title {
+        margin-left: 1rem;
+        font-weight: 600;
+        font-size: .875rem;
+    }
+
+    &__avatar {
+        background-image: url(../../assets/images/Mohan-muruge.jpg);
+        background-size: cover;
+        background-position: center;
+        min-width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        margin: 1rem 0;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 1rem;
+    }
+
+    &__label {
+        color: $primary-text-label;
+        font-weight: 600;
+        font-size: .875rem;
+        margin-bottom: 0.5rem;
+
+    }
+
+    &__input {
+        border: 1px $secondary-divider solid;
+        border-radius: 4px;
+        padding: 1rem;
+        background-color: $secondary-background;
+        resize: none;
+        margin-bottom: 1rem;
+        height: 7rem;
+
+        &::placeholder {
+            font-family: 'AvenirNext';
+            font-weight: 600px;
+            color: $primary-text-dark;
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: $primary-background;
+        height: 40px;
+        background-image: url('../../assets/images/add_comment.svg');
+        background-size: 6%;
+        background-position-x: 0.5rem;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-color: $primary-cta;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 4px;
+    }
+}

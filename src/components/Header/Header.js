@@ -1,5 +1,4 @@
 import './Header.scss';
-// import '../../styles/partials/variables.scss'
 import BrainFlixLogo from '../../assets/images/BrainFlix-logo.svg'
 
 const Header = () => {
