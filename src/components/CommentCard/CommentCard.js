@@ -10,8 +10,9 @@ const CommentCard = () => {
     return (
         <section className='comment-card'>
             
-            {commentObj.map((comment) => 
-                <CommentContent         
+            {commentObj.map((comment, i) => 
+                <CommentContent        
+                    key = {i} 
                     commentComment = {comment.comment}
                     commentName = {comment.name}
                     commentTimestamp = {comment.timestamp}
