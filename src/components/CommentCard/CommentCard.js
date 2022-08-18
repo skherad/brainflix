@@ -1,26 +1,27 @@
 import './CommentCard.scss';
-import CommentContent from '../CommentContent/CommentContent';
-// import CommentData from '../../data/video-details.json'
 
-// console.log(CommentData)
 
 const CommentCard = (props) => {
 
-    console.log(props)
-    // let commentObj = CommentData[0].comments;
+    //TODO change class names from comment-content to comment-card
 
     return (
-        <section className='comment-card'>
-            
-            {props.videoComment.map((e, i) => 
-                <CommentContent        
-                    key = {i} 
-                    commentComment = {e.comment}
-                    commentName = {e.name}
-                    commentTimestamp = {e.timestamp}
-                />
-            )}
-            
+        <section className='comment-content__container'>
+            <div className='comment-content__avatar'></div>
+            <div className='comment-content'>
+                <div className='comment-content__header'>
+                    <div className='comment-content__name'>{props.commentName}</div>
+                    <div className='comment-content__date'>
+                        {new Date(props.commentTimestamp)
+                            .toLocaleDateString("en-US", {
+                                year: "numeric",
+                                month: "2-digit",
+                                day: "2-digit",
+                        })}
+                    </div>
+                </div>
+                <p className='comment-content__text'>{props.commentComment}</p>
+            </div>
         </section>
     );
 }

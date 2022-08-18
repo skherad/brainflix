@@ -1,14 +1,14 @@
 import './VideoList.scss';
 // import VideoContent from '../VideoContent/VideoContent';
 import VideoData from '../../data/videos.json'
-
+console.log(VideoData)
 
 const VideoList = (props) => {
     // console.log(props)
     return (
         <section className='video-list'>
             <h2 className='video-list__title'>NEXT VIDEOS</h2>
-            {VideoData.map((video, i)=>
+            {VideoData?.map((video, i)=>
                 // <VideoContent 
                 //     key = {i}
                 //     videoChannel = {video.channel}

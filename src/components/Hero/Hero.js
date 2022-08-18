@@ -1,12 +1,9 @@
 import './Hero.scss';
 
-
-
-// console.log(CommentData)
+//TODO figure out video link
 // let videoUrl = "https://project-2-api.herokuapp.com/stream";
 
 const Hero = (props) => {
-    // console.log(props)
 
     return (
         <>
@@ -19,7 +16,14 @@ const Hero = (props) => {
                 <div className='hero__box'>
                     <div className='hero__container'>
                         <p className='hero__name'>By {props.videoDetail.channel}</p>
-                        <p className='hero__date'>{props.videoDetail.timestamp}</p>
+                        <p className='hero__date'>
+                            {new Date(props.videoDetail.timestamp)
+                                .toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "2-digit",
+                                    day: "2-digit",
+                            })}
+                        </p>
                     </div>
                     <div className='hero__container'>
                         <p className='hero__view'>{props.videoDetail.views}</p>
