@@ -1,21 +1,23 @@
 import './CommentCard.scss';
 import CommentContent from '../CommentContent/CommentContent';
-import CommentData from '../../data/video-details.json'
+// import CommentData from '../../data/video-details.json'
 
 // console.log(CommentData)
-let commentObj = CommentData[0].comments;
 
-const CommentCard = () => {
+const CommentCard = (props) => {
+
+    console.log(props)
+    // let commentObj = CommentData[0].comments;
 
     return (
         <section className='comment-card'>
             
-            {commentObj.map((comment, i) => 
+            {props.videoComment.map((e, i) => 
                 <CommentContent        
                     key = {i} 
-                    commentComment = {comment.comment}
-                    commentName = {comment.name}
-                    commentTimestamp = {comment.timestamp}
+                    commentComment = {e.comment}
+                    commentName = {e.name}
+                    commentTimestamp = {e.timestamp}
                 />
             )}
             
