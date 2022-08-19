@@ -7,7 +7,7 @@ import Video from './data/video-details.json'
 //import components
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
-import CommentForm from './components/CommentForm/CommentForm';
+// import CommentForm from './components/CommentForm/CommentForm';
 import CommentSection from './components/CommentSection/CommentSection';
 import VideoList from './components/VideoList/VideoList';
 import HeroContent from './components/HeroContent/HeroContent';
@@ -15,43 +15,40 @@ import HeroContent from './components/HeroContent/HeroContent';
 //import styling
 import './App.scss';
 
-console.log(Video);
-
 function App() {
 
   //created a state
-  const [index, setIndex] = useState(0);
+  const [currentVideoId, setVideoId] = useState(Video[0].id);
 
-  //call back function to set selected index 
-  //when clicked on a video card in videolist component
-  const updateIndex = (event,selectedIndex) => { 
-    setIndex(selectedIndex);
-  }
+  let selectedVideo = Video.find(e => e.id === currentVideoId)
 
   return (
   <>
     <Header /> 
     <Hero 
       //pass video details to Hero component
-      videoDetail = {Video[index]}
+      selectedVideo = {selectedVideo}
     />
     <section className='container'>
-      <section className='container__right'>
+      
+      <section className='container__left'>
         <HeroContent 
-          videoDetail = {Video[index]}
+          selectedVideo = {selectedVideo}
         />
-        <CommentForm />
         <CommentSection 
             //pass video's comments details to commentCard component
-            videoComment = {Video[index].comments}
+            selectedVideo = {selectedVideo}
         />
       </section>
+
       <VideoList
           //pass call back function to VideoList component
-          updateIndex = {updateIndex}
+          setVideoId = {setVideoId}
           //pass selected index back to VideoList component
-          newIndex = {index}
+          selectedVideo = {selectedVideo}
+
       />
+
     </section>
   </>  
   );

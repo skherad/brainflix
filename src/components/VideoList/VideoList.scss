@@ -26,6 +26,10 @@
     height: 4.5rem;
     margin: 1rem 0;
 
+    @include tablet {
+        margin-bottom: 1.5rem;
+    }
+
     &--hide {
         display: none;
     }
@@ -48,12 +52,24 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 600;
+
+        @include tablet {
+            font-size: .875rem;
+            line-height: 1.375rem;
+        }
+
     }
 
     &__channel {
         margin: 0.5rem 0 0 0;
         font-size: .8125rem;
         line-height: 1.125rem;
+
+        @include tablet {
+            font-size: .875rem;
+            line-height: 1.375rem;
+        }
+
 
     }
 }

@@ -1,15 +1,16 @@
 import './Hero.scss';
 
-//TODO figure out video link
-// let videoUrl = "https://project-2-api.herokuapp.com/stream";
 
-const Hero = (props) => {
-    console.log(props.videoDetail.image)
+const Hero = ({selectedVideo}) => {
+
+
     return (
-            <video controls className='hero__video' poster={props.videoDetail.image}>
-                <source src=""/>
+        <div className='hero__video-container'>
+            <video controls className='hero__video' poster={selectedVideo.image}>
+                <source src={selectedVideo.video} type=""/>
                 Sorry, your browser doesn't support embedded videos.
             </video>
+        </div>
     );
 }
 
