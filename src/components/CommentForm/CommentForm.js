@@ -9,8 +9,10 @@ const CommentForm = () => {
                 <div className='comment-form__avatar'></div>
                 <form className='comment-form__form'>
                     <label htmlFor='newComment' className='comment-form__label'>JOIN THE CONVERSATION</label>
-                    <textarea id='newComment' className='comment-form__input' placeholder='Add a new comment'></textarea>
-                    <button className='comment-form__button'>COMMENT</button>
+                    <div className='comment-form__nonmobile-container'>
+                        <textarea id='newComment' className='comment-form__input' placeholder='Add a new comment'></textarea>
+                        <button className='comment-form__button'>COMMENT</button>
+                    </div>
                 </form>
             </section>
         </>

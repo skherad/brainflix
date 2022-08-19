@@ -1,45 +1,16 @@
+@use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
-.hero {
-    &__content {
-        margin: 1rem;
-    }
-    &__box {
-        display: flex;
-        justify-content: space-between;
-        border-top: 1px solid $secondary-divider;
-        border-bottom: 1px solid $secondary-divider;
-
-    }
-    &__container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__video{
+    .hero__video{
         width: 100%;
         background-color: grey;    
+        
+        @include tablet {
+            border-left: 3rem solid $secondary-dark;
+            border-right: 3rem solid $secondary-dark;
+        }
+        @include desktop {
+            border-left: 12rem solid $secondary-dark;
+            border-right: 12rem solid $secondary-dark;
+        }
     }
-
-    &__view {
-        background-image: url('../../assets/images/views.svg');
-        background-size: 23%;
-        background-repeat: no-repeat;
-        padding-left: 2rem;
-        color: $primary-text-label;
-
-    }
-
-    &__like {
-        background-image: url('../../assets/images/likes.svg');
-        background-size: 19%;
-        background-repeat: no-repeat;
-        padding-left: 1.8rem;
-        color: $primary-text-label;
-    }
-
-    &__date {
-        color: $primary-text-label;
-
-    }
-}

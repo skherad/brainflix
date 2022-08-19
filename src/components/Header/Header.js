@@ -6,12 +6,15 @@ const Header = () => {
 
     return (
         <header className='header'>
-            <img src={BrainFlixLogo} alt='brainflix logo' className='header__logo'/>
-            <div className='header__mobile-container'>
-                <input type='text' placeholder='Search' className='header__search'/>
-                <div className='header__avatar'></div>
+            <a href='./'><img src={BrainFlixLogo} alt='brainflix logo' className='header__logo'/></a>
+            <div className='header__nonmobile-container'>
+                <div className='header__mobile-container'>
+                    <input type='text' placeholder='Search' className='header__search'/>
+                    <div className='header__avatar'></div>
+                </div>
+                <button className='header__button'>UPLOAD</button>
+                <div className='header__avatar header__avatar--nonmobile'></div>
             </div>
-            <button className='header__button'>UPLOAD</button>
         </header>
     );
 }

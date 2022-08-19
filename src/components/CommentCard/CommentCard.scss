@@ -1,11 +1,19 @@
 @use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
 
-.comment-content {
 
-    &__container {
-        display: flex;
-        border-bottom: 1px solid $secondary-divider;
-        margin-bottom: 1rem;
+.comment-card {
+    display: flex;
+    border-bottom: 1px solid $secondary-divider;
+    margin-bottom: 1rem;
+    
+    @include desktop {
+        padding-right: 2rem;
+        border-bottom: none;
+        border-top: 1px solid $secondary-divider;
+        padding-top: 1rem;
+
+
     }
 
     &__avatar {
@@ -16,11 +24,36 @@
         height: 36px;
         border-radius: 50%;
         margin: 0 1rem 1rem 0;
+
+        @include tablet {
+            min-width: 40px;
+            height: 40px;
+                
+        }
     }
 
     &__header {
         display: flex;
         justify-content: space-between;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: .8125rem;
+        line-height: 1.125rem;
+
+    }
+
+    &__date {
+        color: $primary-text-label ;
+        font-size: .8125rem;
+        line-height: 1.125rem;
+
+    }
+
+    &__text {
+        font-size: .8125rem;
+        line-height: 1.125rem;
     }
 }
     

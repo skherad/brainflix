@@ -10,6 +10,7 @@ import Hero from './components/Hero/Hero'
 import CommentForm from './components/CommentForm/CommentForm';
 import CommentSection from './components/CommentSection/CommentSection';
 import VideoList from './components/VideoList/VideoList';
+import HeroContent from './components/HeroContent/HeroContent';
 
 //import styling
 import './App.scss';
@@ -34,12 +35,17 @@ function App() {
       //pass video details to Hero component
       videoDetail = {Video[index]}
     />
-    <section>
-      <CommentForm />
-      <CommentSection 
-          //pass video's comments details to commentCard component
-          videoComment = {Video[index].comments}
-      />
+    <section className='container'>
+      <section className='container__right'>
+        <HeroContent 
+          videoDetail = {Video[index]}
+        />
+        <CommentForm />
+        <CommentSection 
+            //pass video's comments details to commentCard component
+            videoComment = {Video[index].comments}
+        />
+      </section>
       <VideoList
           //pass call back function to VideoList component
           updateIndex = {updateIndex}

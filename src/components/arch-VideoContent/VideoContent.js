@@ -1,7 +1,7 @@
 // import './VideoContent.scss';
 // import VideoData from '../../data/video-details.json'
 
-//TODO should i delete this or make it work?
+
 
 // const VideoContent = (props) => {
 

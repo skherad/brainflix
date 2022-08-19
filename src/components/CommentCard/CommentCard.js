@@ -3,15 +3,14 @@ import './CommentCard.scss';
 
 const CommentCard = (props) => {
 
-    //TODO change class names from comment-content to comment-card
 
     return (
-        <section className='comment-content__container'>
-            <div className='comment-content__avatar'></div>
-            <div className='comment-content'>
-                <div className='comment-content__header'>
-                    <div className='comment-content__name'>{props.commentName}</div>
-                    <div className='comment-content__date'>
+        <section className='comment-card'>
+            <div className='comment-card__avatar'></div>
+            <div className='comment-card__container'>
+                <div className='comment-card__header'>
+                    <div className='comment-card__name'>{props.commentName}</div>
+                    <div className='comment-card__date'>
                         {new Date(props.commentTimestamp)
                             .toLocaleDateString("en-US", {
                                 year: "numeric",
@@ -20,7 +19,7 @@ const CommentCard = (props) => {
                         })}
                     </div>
                 </div>
-                <p className='comment-content__text'>{props.commentComment}</p>
+                <p className='comment-card__text'>{props.commentComment}</p>
             </div>
         </section>
     );
