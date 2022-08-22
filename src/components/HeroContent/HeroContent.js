@@ -1,5 +1,9 @@
 import './HeroContent.scss';
 
+// import icons
+import viewIcon from '../../assets/images/views.svg';
+import likeIcon from '../../assets/images/likes.svg';
+
 const HeroContent =({selectedVideo}) => {
 
 
@@ -19,8 +23,14 @@ const HeroContent =({selectedVideo}) => {
                         </p>
                     </div>
                     <div className='hero__container'>
-                        <p className='hero__view'>{selectedVideo.views}</p>
-                        <p className='hero__like'>{selectedVideo.likes}</p>
+                        <div className='hero__container-icon'>
+                            <img src={viewIcon} className="hero__view-icon"></img>
+                            <p className='hero__view'>{selectedVideo.views}</p>
+                        </div>
+                        <div className='hero__container-icon'>
+                            <img src={likeIcon} className="hero__like-icon"></img>
+                            <p className='hero__like'>{selectedVideo.likes}</p>
+                        </div>
                     </div>
                 </div>
                 <p className='hero__description'>{selectedVideo.description}</p>

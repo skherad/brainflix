@@ -23,9 +23,10 @@ const CommentSection = ({selectedVideo}) => {
                 </form>
             </section>
 
+            {/* display selected video's comments */}
             <section className='comment-section'>
                 {/* map through videoComment passed from App.js
-                    and create a comment card for each    */}
+                    and create a comment card for each */}
                 {selectedVideo.comments.map((e, i) => 
                     <CommentCard        
                         key = {i} 

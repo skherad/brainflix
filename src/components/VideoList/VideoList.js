@@ -1,13 +1,13 @@
 import './VideoList.scss';
 import VideoData from '../../data/videos.json'
 
-const VideoList = ({setVideoId, selectedVideo}) => {
+const VideoList = ({setVideoId, selectedVideoId}) => {
 
     return (
         <section className='video-list'>
             <h2 className='video-list__title'>NEXT VIDEOS</h2>
             {VideoData?.map((e, i)=>
-                <section className={`video-card ${selectedVideo.id===e.id?"video-card--hide":""}`} 
+                <section className={`video-card ${selectedVideoId===e.id?"video-card--hide":""}`} 
                     key={i} 
                     onClick={() => setVideoId(e.id)}
                 >

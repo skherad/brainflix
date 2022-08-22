@@ -89,15 +89,15 @@
 
     }
 
+    &__container-icon {
+        display: flex;
+    }
+
     &__view {
-        background-image: url('../../assets/images/views.svg');
-        background-size: 23%;
-        background-repeat: no-repeat;
-        padding-left: 2rem;
+        padding-left: 0.5rem;
         color: $primary-text-label;
         font-size: 0.9rem;
         line-height: 1.125rem;
-        // padding-right: 2rem;
 
 
         @include tablet {
@@ -110,10 +110,7 @@
     }
 
     &__like {
-        background-image: url('../../assets/images/likes.svg');
-        background-size: 19%;
-        background-repeat: no-repeat;
-        padding-left: 1.8rem;
+        padding-left: 0.5rem;
         color: $primary-text-label;   
         font-size: 0.9rem;
         line-height: 1.125rem;

@@ -120,9 +120,5 @@
     &__button {
         @include default-button;
         background-image: url('../../assets/images/add_comment.svg');
-
-        @include tablet {
-            width: 30%;
-        }
     }
 }
