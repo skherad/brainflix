@@ -1,18 +1,24 @@
 import './Header.scss';
 import BrainFlixLogo from '../../assets/images/BrainFlix-logo.svg'
 
+import { Link } from 'react-router-dom';
+
 const Header = () => {
 
 
     return (
         <header className='header'>
-            <a href='./'><img src={BrainFlixLogo} alt='brainflix logo' className='header__logo'/></a>
+            <Link to="/">
+                <img src={BrainFlixLogo} alt='brainflix logo' className='header__logo'/>
+            </Link>
             <div className='header__nonmobile-container'>
                 <div className='header__mobile-container'>
                     <input type='text' placeholder='Search' className='header__search'/>
                     <div className='header__avatar'></div>
                 </div>
-                <button className='header__button'>UPLOAD</button>
+                <button className='header__button'>
+                    <Link to="/upload">UPLOAD</Link>
+                </button>
                 <div className='header__avatar header__avatar--nonmobile'></div>
             </div>
         </header>
