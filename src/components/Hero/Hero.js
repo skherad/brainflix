@@ -3,7 +3,7 @@ import './Hero.scss';
 
 const Hero = ({selectedVideo}) => {
 
-    
+  
     return (
         <div className='hero__video-container'>
             <video controls className='hero__video' poster={selectedVideo.image}>

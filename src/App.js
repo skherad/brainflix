@@ -1,6 +1,5 @@
 //import state
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NextVideo from './pages/NextVideo'
 
 
 //import components
@@ -20,7 +19,7 @@ function App() {
       <Header /> 
       <Routes>
         <Route path="/" element={<VideoPlayer />}></Route>
-        <Route path="/:videoId" element={<NextVideo />}></Route>
+        <Route path="/:videoId" element={<VideoPlayer />}></Route>
         <Route path="/upload" element={<VideoUpload />}></Route>
       </Routes>
     </BrowserRouter>

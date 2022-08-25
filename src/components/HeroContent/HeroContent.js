@@ -6,7 +6,6 @@ import likeIcon from '../../assets/images/likes.svg';
 
 const HeroContent =({selectedVideo}) => {
 
-
   return (
     <section className='hero__content'>
                 <h1 className='hero__title'>{selectedVideo.title}</h1>

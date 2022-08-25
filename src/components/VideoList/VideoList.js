@@ -1,26 +1,29 @@
-import './VideoList.scss';
-import VideoData from '../../data/videos.json'
 import { Link } from 'react-router-dom';
 
-const VideoList = ({setCurrentVideoId, currentVideoId}) => {
-    console.log(setCurrentVideoId)
+import './VideoList.scss';
+
+const VideoList = ({videoArray, selectedVideo}) => {
+
+  
     return (
+
         <section className='video-list'>
             <h2 className='video-list__title'>NEXT VIDEOS</h2>
-            {VideoData?.map((e)=>
-                <section 
-                    className={`video-card ${currentVideoId===e.id?"video-card--hide":""}`} 
-                    key={e.id} 
-                    onClick={() => setCurrentVideoId(e.id)}
+            {videoArray?.filter(video => video.id != selectedVideo.id).map((e)=>
+                <Link 
+                    to={`/${e.id}`} 
+                    className="video-card__link"
+                    key={e.id}     
                 >
-                    <Link to={`/${e.id}`}>
-                        <div style={{backgroundImage: `url(${e.image})`}} className='video-card__img'></div>
-                        <div className='video-card__text'>
-                            <p className='video-card__title'>{e.title}</p>
-                            <p className='video-card__channel'>{e.channel}</p>
-                        </div>
-                    </Link>
-                </section>
+                    <section className='video-card'>
+                        
+                            <div style={{backgroundImage: `url(${e.image})`}} className='video-card__img'></div>
+                            <div className='video-card__text'>
+                                <p className='video-card__title'>{e.title}</p>
+                                <p className='video-card__channel'>{e.channel}</p>
+                            </div>
+                    </section>
+                </Link>
             )}
         </section>
     );

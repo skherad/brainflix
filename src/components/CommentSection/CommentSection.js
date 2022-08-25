@@ -6,7 +6,9 @@ import CommentCard from '../CommentCard/CommentCard';
 
 
 const CommentSection = ({selectedVideo}) => {
+    
 
+    let currentVideoComments = selectedVideo.comments;
 
     return (
         <>
@@ -27,7 +29,7 @@ const CommentSection = ({selectedVideo}) => {
             <section className='comment-section'>
                 {/* map through videoComment passed from App.js
                     and create a comment card for each */}
-                {selectedVideo.comments.map((e, i) => 
+                {currentVideoComments?.map((e, i) => 
                     <CommentCard        
                         key = {i} 
                         commentComment = {e.comment}

@@ -16,8 +16,8 @@ const Header = () => {
                     <input type='text' placeholder='Search' className='header__search'/>
                     <div className='header__avatar'></div>
                 </div>
-                <button className='header__button'>
-                    <Link to="/upload">UPLOAD</Link>
+                <button  className='header__button'>
+                    <Link to="/upload"  className='link'>UPLOAD</Link>
                 </button>
                 <div className='header__avatar header__avatar--nonmobile'></div>
             </div>
