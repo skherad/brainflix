@@ -9,9 +9,9 @@ const VideoList = ({videoArray, selectedVideo}) => {
 
         <section className='video-list'>
             <h2 className='video-list__title'>NEXT VIDEOS</h2>
-            {videoArray?.filter(video => video.id != selectedVideo.id).map((e)=>
+            {videoArray?.filter(video => video.id != selectedVideo?.id).map((e)=>
                 <Link 
-                    to={`/${e.id}`} 
+                    to={`/video/${e.id}`} 
                     className="video-card__link"
                     key={e.id}     
                 >

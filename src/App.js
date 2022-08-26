@@ -9,6 +9,7 @@ import VideoUpload from './pages/VideoUpload';
 
 //import styling
 import './App.scss';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -19,8 +20,9 @@ function App() {
       <Header /> 
       <Routes>
         <Route path="/" element={<VideoPlayer />}></Route>
-        <Route path="/:videoId" element={<VideoPlayer />}></Route>
+        <Route path="/video/:videoId" element={<VideoPlayer />}></Route>
         <Route path="/upload" element={<VideoUpload />}></Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
   </>  

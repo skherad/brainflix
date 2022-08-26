@@ -9,8 +9,10 @@ import HeroContent from '../components/HeroContent/HeroContent';
 
 
 const VideoPlayer = () => {
-
+    
     const {videoId} = useParams()
+
+    console.log(videoId)
 
     const [videoArray, setVideoArray] = useState();
     const [selectedVideo, setSelectedVideo] = useState();
@@ -40,10 +42,14 @@ const VideoPlayer = () => {
     // if(videoArray.find(video=>video.id === videoId)){
     //     return "Found";
     // }
-    if(!selectedVideo || !videoArray ) {
-        return <h2>Loading...</h2>
-    }
-  
+    // if(!selectedVideo || !videoArray ) {
+    //     return <h2>Loading...</h2>
+    // }
+    
+    // if(videoArray?.find(video => video.id === videoId) === undefined) {
+    //     return <div>Page Not Found</div>
+    // }
+
   return (
     <>
         <Hero 

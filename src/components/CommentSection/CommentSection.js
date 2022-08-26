@@ -7,8 +7,11 @@ import CommentCard from '../CommentCard/CommentCard';
 
 const CommentSection = ({selectedVideo}) => {
     
+    // if(!selectedVideo) {
+    //     return <h2>Loading...</h2>
+    // }
 
-    let currentVideoComments = selectedVideo.comments;
+    let currentVideoComments = selectedVideo?.comments;
 
     return (
         <>
