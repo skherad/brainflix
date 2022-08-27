@@ -35,7 +35,7 @@ const VideoUpload = () => {
 
     return (
       <section className='upload'>
-        <h2>Upload Video</h2>
+        <h2 className='upload__title'>Upload Video</h2>
         <h3 className='upload__label'>VIDEO THUMBNAIL</h3>
         <div className='upload__thumbnail'></div>
 
@@ -64,12 +64,13 @@ const VideoUpload = () => {
             onChange={handleDesc}
             value={videoDesc}
           ></textarea>
-          
-          <button className='form__button'>PUBLISH</button>
-          <button 
-            className='form__button form__button--cancel' 
-            onClick={handleCancel}
-          >CANCEL</button>
+          <div className='form__nonmobile-container'>
+            <button className='form__button'>PUBLISH</button>
+            <button 
+              className='form__button form__button--cancel' 
+              onClick={handleCancel}
+            >CANCEL</button>
+          </div>
         </form>
       </section>
     )

@@ -12,8 +12,6 @@ const VideoPlayer = () => {
     
     const {videoId} = useParams()
 
-    console.log(videoId)
-
     const [videoArray, setVideoArray] = useState();
     const [selectedVideo, setSelectedVideo] = useState();
 
