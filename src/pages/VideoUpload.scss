@@ -112,6 +112,10 @@
             padding-left: 1rem;
         }
 
+        @include desktop {
+            margin-bottom: 2.5rem;
+        }
+
         &::placeholder {
             font-family: 'AvenirNext';
             font-weight: 600px;
@@ -167,7 +171,6 @@
         @include default-button;
         background-image: url('../assets/images/publish.svg');
         margin-bottom: 2rem;
-        // margin-left: 1rem;
         @include tablet {
             width: 10rem;
         }
@@ -176,6 +179,9 @@
             color: $primary-cta;
             background-color: $primary-background;
             background-image: none;
+            @include tablet {
+                margin-right: 0.5rem;
+            }
         }
     }
 }

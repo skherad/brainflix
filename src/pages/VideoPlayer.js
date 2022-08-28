@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import Hero from '../components/Hero/Hero'
@@ -37,17 +37,6 @@ const VideoPlayer = () => {
         
     },[videoId])
 
-    // if(videoArray.find(video=>video.id === videoId)){
-    //     return "Found";
-    // }
-    // if(!selectedVideo || !videoArray ) {
-    //     return <h2>Loading...</h2>
-    // }
-    
-    // if(videoArray?.find(video => video.id === videoId) === undefined) {
-    //     return <div>Page Not Found</div>
-    // }
-
   return (
     <>
         <Hero 
@@ -74,7 +63,6 @@ const VideoPlayer = () => {
                 videoArray = {videoArray}
                 selectedVideo = {selectedVideo}
             />
-
 
         </section>
     </>
