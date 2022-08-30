@@ -33,7 +33,7 @@ const CommentSection = ({selectedVideo}) => {
                     and create a comment card for each */}
                 {currentVideoComments?.map((e,i) => 
                     <CommentCard        
-                        key = {e.id} 
+                        key = {i} 
                         commentComment = {e.comment}
                         commentName = {e.name}
                         commentTimestamp = {e.timestamp}

@@ -9,7 +9,7 @@ import HeroContent from '../components/HeroContent/HeroContent';
 
 
 const VideoPlayer = () => {
-    
+        
     const {videoId} = useParams()
 
     const [videoArray, setVideoArray] = useState();
@@ -24,7 +24,6 @@ const VideoPlayer = () => {
  
     //use to set the selected video
     useEffect(() => {
-
         if(videoId) {
             axios.get(`http://localhost:8080/videos/${videoId}`)
             .then(response => setSelectedVideo(response.data))
@@ -33,8 +32,7 @@ const VideoPlayer = () => {
             axios.get(`http://localhost:8080/videos/84e96018-4022-434e-80bf-000ce4cd12b8`)
             .then(response => setSelectedVideo(response.data))
             .catch(error=> console.log(error))
-        }
-        
+        } 
     },[videoId])
 
   return (

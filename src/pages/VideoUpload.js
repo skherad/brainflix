@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,29 +6,38 @@ import './VideoUpload.scss'
 
 const VideoUpload = () => {
     let navigate = useNavigate();
-    const [videoTitle, setVideoTitle] = useState("");
-    const [videoDesc, setVideoDesc] = useState("");
 
-    const handleTitle = (event) => {
-      setVideoTitle(event.target.value)
-    }
+    const [state, setState] = useState({
+      videoTitle: "",
+      videoDesc: ""
+    })
 
-    const handleDesc = (event) => {
-      setVideoDesc(event.target.value)
+    const handleChange = (event) => {
+      const value = event.target.value;
+      setState({
+        ...state,
+        [event.target.name]: value
+      })
     }
 
     const handleCancel = (event) => {
       event.preventDefault();
-      setVideoDesc("");
-      setVideoTitle("");
+      setState({
+        videoDesc: "",
+        videoTitle: ""
+      })
     }
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      if(!videoTitle || !videoDesc) {
+      if(!state.videoTitle || !state.videoDesc) {
         alert("Failed to upload, ensure all fields are filled!")
         return;
       } else {
+        axios.post("http://localhost:8080/videos", {
+          title: state.videoTitle, 
+          description: state.videoDesc
+        })
         alert ("Upload successful")
         navigate('/')
       }
@@ -54,8 +64,8 @@ const VideoUpload = () => {
                 id="videoTitle" 
                 placeholder='Add a title to your video'  
                 className='form__input'
-                onChange={handleTitle}
-                value={videoTitle}
+                onChange={handleChange}
+                value={state.videoTitle}
               ></input>
               
               <label htmlFor="videoDesc" className='form__label'>
@@ -66,8 +76,8 @@ const VideoUpload = () => {
                 id="videoDesc"
                 placeholder='Add a description to your video'  
                 className='form__textarea'
-                onChange={handleDesc}
-                value={videoDesc}
+                onChange={handleChange}
+                value={state.videoDesc}
               ></textarea>
             </div>
           </div>
