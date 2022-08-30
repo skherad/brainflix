@@ -17,7 +17,7 @@ const VideoPlayer = () => {
 
     //pulls array of video data
     useEffect(() => {
-        axios.get("https://project-2-api.herokuapp.com/videos?api_key=9df37e6f-6bec-432b-a405-d78e1f1591ca")
+        axios.get("http://localhost:8080/videos")
         .then(response =>  setVideoArray(response.data))
         .catch(error=> console.log(error))
     }, [])
@@ -26,11 +26,11 @@ const VideoPlayer = () => {
     useEffect(() => {
 
         if(videoId) {
-            axios.get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=9df37e6f-6bec-432b-a405-d78e1f1591ca`)
+            axios.get(`http://localhost:8080/videos/${videoId}`)
             .then(response => setSelectedVideo(response.data))
             .catch(error=> console.log(error))
         } else {
-            axios.get(`https://project-2-api.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=9df37e6f-6bec-432b-a405-d78e1f1591ca`)
+            axios.get(`http://localhost:8080/videos/84e96018-4022-434e-80bf-000ce4cd12b8`)
             .then(response => setSelectedVideo(response.data))
             .catch(error=> console.log(error))
         }

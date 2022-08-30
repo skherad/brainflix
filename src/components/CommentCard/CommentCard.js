@@ -1,7 +1,7 @@
 import './CommentCard.scss';
 
 
-const CommentCard = (props) => {
+const CommentCard = ({commentName, commentTimestamp, commentComment}) => {
 
 
     return (
@@ -9,9 +9,9 @@ const CommentCard = (props) => {
             <div className='comment-card__avatar'></div>
             <div className='comment-card__container'>
                 <div className='comment-card__header'>
-                    <div className='comment-card__name'>{props.commentName}</div>
+                    <div className='comment-card__name'>{commentName}</div>
                     <div className='comment-card__date'>
-                        {new Date(props.commentTimestamp)
+                        {new Date(commentTimestamp)
                             .toLocaleDateString("en-US", {
                                 year: "numeric",
                                 month: "2-digit",
@@ -19,7 +19,7 @@ const CommentCard = (props) => {
                         })}
                     </div>
                 </div>
-                <p className='comment-card__text'>{props.commentComment}</p>
+                <p className='comment-card__text'>{commentComment}</p>
             </div>
         </section>
     );
