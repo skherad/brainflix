@@ -37,7 +37,7 @@ const VideoUpload = () => {
         axios.post("http://localhost:8080/videos", {
           title: state.videoTitle, 
           description: state.videoDesc,
-          image: "http://localhost:8080/public/thumbnail"
+          image: "http://localhost:8080/public/Upload-video-preview.jpeg"
         })
         alert ("Upload successful")
         navigate('/')

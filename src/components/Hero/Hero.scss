@@ -2,26 +2,27 @@
 @use '../../styles/partials/variables' as *;
 
 .hero {
-    
+    display: flex;
+    justify-content: center;
+    background-color:$secondary-dark;
+
     &__video-container {
         width: 100vw;
         background-color: $secondary-dark;
-        display: flex;
-        justify-content: center; 
-    }
 
-    &__video{
-        width: 100%;
-        background-color: grey;
-    
         @include tablet {
             width: 80%;
         }
         @include desktop {
             width: 70%;
         }
-    
+    }
 
+    &__video{
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16/9;
+        // background-color: grey;
     }
 
 }
