@@ -27,7 +27,7 @@ const VideoPlayer = () => {
     //use to set the selected video
     useEffect(() => {
         if(videoId) {
-            axios.get(`${API_URL}/${videoId}`)
+            axios.get(`${API_URL}/${videoId}${API_KEY}`)
             .then(response => setSelectedVideo(response.data))
             .catch(error=> console.log(error))
         } else {
