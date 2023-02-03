@@ -18,6 +18,7 @@ const VideoUpload = () => {
         ...state,
         [event.target.name]: value
       })
+      console.log(value)
     }
 
     const handleCancel = (event) => {
