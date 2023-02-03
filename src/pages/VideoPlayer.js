@@ -7,6 +7,8 @@ import CommentSection from '../components/CommentSection/CommentSection';
 import VideoList from '../components/VideoList/VideoList';
 import HeroContent from '../components/HeroContent/HeroContent';
 
+const API_URL= "https://project-2-api.herokuapp.com/videos"
+const API_KEY="?api_key=9df37e6f-6bec-432b-a405-d78e1f1591ca"
 
 const VideoPlayer = () => {
         
@@ -17,7 +19,7 @@ const VideoPlayer = () => {
 
     //pulls array of video data
     useEffect(() => {
-        axios.get("http://localhost:8080/videos")
+        axios.get(`${API_URL}${API_KEY}`)
         .then(response =>  setVideoArray(response.data))
         .catch(error=> console.log(error))
     }, [])
@@ -25,11 +27,11 @@ const VideoPlayer = () => {
     //use to set the selected video
     useEffect(() => {
         if(videoId) {
-            axios.get(`http://localhost:8080/videos/${videoId}`)
+            axios.get(`${API_URL}/${videoId}`)
             .then(response => setSelectedVideo(response.data))
             .catch(error=> console.log(error))
         } else {
-            axios.get(`http://localhost:8080/videos/84e96018-4022-434e-80bf-000ce4cd12b8`)
+            axios.get(`${API_URL}/84e96018-4022-434e-80bf-000ce4cd12b8${API_KEY}`)
             .then(response => setSelectedVideo(response.data))
             .catch(error=> console.log(error))
         } 
